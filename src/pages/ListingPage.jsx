@@ -7,7 +7,7 @@ const ListingPage=()=>
     const handleSubmit=async (e)=>
     {
         e.preventDefault();
-         await firebase.handleCreateNewListing(name,isbnNumber,price,cover);
+         await firebase.handleCreateNewListing(name,isbnNumber,price,coverPic);
 
     }
     const firebase=useFirebase();
@@ -18,7 +18,7 @@ const ListingPage=()=>
     return(
           <div className="container mt-5">
         <Form  onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicBookname">
         <Form.Label>Enter Book name</Form.Label>
         <Form.Control onChange={(e)=>setName(e.target.value)}
         value={name}
@@ -26,25 +26,25 @@ const ListingPage=()=>
         
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="mb-3" controlId="formBasicbookisbn">
         <Form.Label >ISBN</Form.Label>
         <Form.Control 
         onChange={(e)=>setisbnNumber(e.target.value)}
         value={isbnNumber}
          type="text" placeholder="ISBN number" />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="mb-3" controlId="formBasicbookprice">
         <Form.Label >Price</Form.Label>
         <Form.Control 
         onChange={(e)=>setPrice(e.target.value)}
         value={price}
          type="text" placeholder="Enter price" />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="mb-3" controlId="formBasicfile">
         <Form.Label >Upload File Cover</Form.Label>
         <Form.Control 
         onChange={(e)=>setCoverPic(e.target.files[0])}
-        value={price}
+        
          type="file" placeholder="Enter price" />
       </Form.Group>
       

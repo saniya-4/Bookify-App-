@@ -11,15 +11,15 @@ const Login=()=>
     const navigate=useNavigate();
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
-    useEffect(()=>
-    {
-        if(firebase.isLoggedIn)
-        {
-            navigate("/");
+    // useEffect(()=>
+    // {
+    //     if(firebase.isLoggedIn)
+    //     {
+    //         navigate("/");
              
-        }
+    //     }
 
-    },[firebase,navigate])
+    // },[firebase,navigate])
     const handleSubmit=async(e)=>
     {
         e.preventDefault();
