@@ -12,8 +12,22 @@ const ViewOrderDetails=()=>
     },[firebase])
     console.log(params);
     return (
-        <div className="container">
+        <div className="container mt-3 ">
             <h1>Orders</h1>
+            {console.log("orders:", orders)}
+            {
+                orders.map((order)=>
+                {
+                    const data=order.data();
+                   return(
+                    <div className="mt-5" style={{border:"1px solid", padding:"10px"}}> 
+                        <h5>Order By:{data.userEmail}</h5>
+                        <h6>Qty:{data.qty}</h6>
+                    </div>
+                    
+                   )
+                })
+            }
            
             
         </div>

@@ -21,8 +21,8 @@ const firebaseConfig = {
   appId: "1:79730044862:web:d6c1381d1924bd4be693ef"
 };
 const firebaseApp=initializeApp(firebaseConfig);
+export const firestore = getFirestore(firebaseApp);
 const firebaseAuth=getAuth(firebaseApp);
-const firestore=getFirestore(firebaseApp);
 
 const googleProvider=new GoogleAuthProvider();
 export const FirebaseProvider=(props)=>
@@ -78,7 +78,7 @@ export const FirebaseProvider=(props)=>
   }
   const getOrders=async(bookId)=>
   {
-    const collectionRef=collection(firestore,"books",bookId,"orders")
+    const collectionRef=collection(firestore,"books",bookId,"order")
     const result=await getDocs(collectionRef);
     return result;
 
